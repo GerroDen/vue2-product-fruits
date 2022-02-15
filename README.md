@@ -26,7 +26,7 @@ router.afterEach(() => {
 ```
 
 # Props
-All props are equal to the [react component](https://docs.productfruits.com/developers/integration-react-nextjs) or [vanilla integration](https://docs.productfruits.com/developers/integration-web-applications) of Product Fruits.
+All props are equal to the [react component](https://docs.productfruits.com/developers/integration-react-nextjs) or [vanilla integration](https://docs.productfruits.com/developers/integration-web-applications) of [Product Fruits](https://productfruits.com/).
 
 ## Required
 **project-code** `string`<br/>
