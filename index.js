@@ -25,9 +25,9 @@ export default {
 			console.info("PF - dom is not ready, projectCode is not set or language is not set");
 			return;
 		}
-		if (!global.productFruits) {
+		if (!window.productFruits) {
 			this.setUserConfig();
-			global.pfDisableUrlChangeDetection = true;
+			window.pfDisableUrlChangeDetection = true;
 			((w, d, u, c) => {
 				const headEl = d.getElementsByTagName("head")[0];
 				const scriptEl = d.createElement("script");
@@ -35,11 +35,11 @@ export default {
 				scriptEl.src = `${u}?c=${c}`;
 				this.scriptElement = scriptEl;
 				headEl.appendChild(scriptEl);
-			})(global, document, "https://app.productfruits.com/static/script.js", projectCode, language);
+			})(window, document, "https://app.productfruits.com/static/script.js", projectCode, language);
 		}
-		if (global.productFruitsUnmounted && global.productFruitsInit) {
-			global.productFruitsInit();
-			delete global.productFruitsUnmounted;
+		if (window.productFruitsUnmounted && window.productFruitsInit) {
+			window.productFruitsInit();
+			delete window.productFruitsUnmounted;
 		}
 		console.debug(`product fruits mounted with ${JSON.stringify(this.$props)}`);
 	},
@@ -49,11 +49,11 @@ export default {
 		console.debug(`product fruits updated with ${JSON.stringify(this.$props)}`);
 	},
 	beforeDestroy() {
-		if (!isDOMReady() || !global.productFruits || !global.productFruits.services) return;
-		global.productFruits.services.destroy();
-		delete global.productFruits;
-		delete global.productFruitsUser;
-		global.productFruitsUnmounted = true;
+		if (!isDOMReady() || !window.productFruits || !window.productFruits.services) return;
+		window.productFruits.services.destroy();
+		delete window.productFruits;
+		delete window.productFruitsUser;
+		window.productFruitsUnmounted = true;
 		this.scriptElement && this.scriptElement.remove();
 		console.debug("product fruits unmounted");
 	},
@@ -70,8 +70,8 @@ export default {
 				role,
 				props,
 			} = this.$props;
-			if (!global.productFruits || !global.productFruits.identifyUser) {
-				global.productFruitsUser = {
+			if (!window.productFruits || !window.productFruits.identifyUser) {
+				window.productFruitsUser = {
 					username,
 					email,
 					firstname,
@@ -81,7 +81,7 @@ export default {
 					props,
 				};
 			} else {
-				global.productFruits.identifyUser({
+				window.productFruits.identifyUser({
 					username,
 					email,
 					firstname,
@@ -91,10 +91,10 @@ export default {
 					props,
 				});
 			}
-			global.productFruits = global.productFruits || {};
-			const fireLanguageChangedEvent = global.productFruits.language && global.productFruits.language !== language;
-			global.productFruits.language = language;
-			global.productFruits.code = projectCode;
+			window.productFruits = window.productFruits || {};
+			const fireLanguageChangedEvent = window.productFruits.language && window.productFruits.language !== language;
+			window.productFruits.language = language;
+			window.productFruits.code = projectCode;
 			if (fireLanguageChangedEvent) {
 				document.dispatchEvent(new CustomEvent("pf:language_changed"));
 			}
@@ -109,6 +109,6 @@ export default {
  * @return {boolean}
  */
 function isDOMReady() {
-	return global && global.document && global.document.createElement;
+	return window && window.document && window.document.createElement;
 }
 
