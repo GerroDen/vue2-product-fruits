@@ -4,6 +4,9 @@
 	"description": "Vue2 port of react-product-fruits",
 	"main": "index.js",
 	"type": "module",
+	"scripts": {
+		"lint": "eslint ."
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/GerroDen/vue2-product-fruits.git"
