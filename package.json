@@ -1,6 +1,6 @@
 {
   "name": "vue2-product-fruits",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Vue2 port of react-product-fruits",
   "main": "src/index.js",
   "type": "module",
