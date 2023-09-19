@@ -21,10 +21,7 @@ export default {
 			projectCode,
 			language,
 		} = this.$props;
-		if (!projectCode || !language || !isDOMReady()) {
-			console.info("PF - dom is not ready, projectCode is not set or language is not set");
-			return;
-		}
+		if (!projectCode || !language || !isDOMReady()) return;
 		if (!window.productFruits) {
 			this.setUserConfig();
 			window.pfDisableUrlChangeDetection = true;
@@ -41,12 +38,10 @@ export default {
 			window.productFruitsInit();
 			delete window.productFruitsUnmounted;
 		}
-		console.debug(`product fruits mounted with ${JSON.stringify(this.$props)}`);
 	},
 	updated() {
 		if (!isDOMReady()) return;
 		this.setUserConfig();
-		console.debug(`product fruits updated with ${JSON.stringify(this.$props)}`);
 	},
 	beforeDestroy() {
 		if (!isDOMReady() || !window.productFruits || !window.productFruits.services) return;
@@ -55,7 +50,6 @@ export default {
 		delete window.productFruitsUser;
 		window.productFruitsUnmounted = true;
 		this.scriptElement && this.scriptElement.remove();
-		console.debug("product fruits unmounted");
 	},
 	methods: {
 		setUserConfig() {
