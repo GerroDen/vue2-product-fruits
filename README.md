@@ -1,7 +1,9 @@
 Vue2 port of [`react-product-fruits`](https://www.npmjs.com/package/react-product-fruits).
 
 # Example
+
 Register the component locally or globally and use it in templates as late as possible.
+
 ```
 <product-fruits
     project-code="ABCDEFGHIJK"
@@ -17,8 +19,10 @@ Register the component locally or globally and use it in templates as late as po
 ```
 
 # Routing
+
 In order to properly work with [Vue router](https://router.vuejs.org/), it is required to call `window.productFruits.pageChanged();` after each routing.
 With optional chaining nothing happens in case the api is not loaded yet.
+
 ```
 router.afterEach(() => {
     window.productFruits?.pageChanged?.();
@@ -26,9 +30,11 @@ router.afterEach(() => {
 ```
 
 # Props
+
 All props are equal to the [react component](https://docs.productfruits.com/developers/integration-react-nextjs) or [vanilla integration](https://docs.productfruits.com/developers/integration-web-applications) of [Product Fruits](https://productfruits.com/).
 
 ## Required
+
 **project-code** `string`<br/>
 ID of your workspace
 
@@ -39,6 +45,7 @@ ID of your workspace
 a unique identifier of the currently logged-in user
 
 ## User properties
+
 **email** `string`<br/>
 
 **firstname** `string`<br/>

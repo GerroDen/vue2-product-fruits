@@ -1,24 +1,25 @@
 {
-	"name": "vue2-product-fruits",
-	"version": "0.1.0",
-	"description": "Vue2 port of react-product-fruits",
-	"main": "index.js",
-	"type": "module",
-	"scripts": {
-		"lint": "eslint ."
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/GerroDen/vue2-product-fruits.git"
-	},
-	"author": "Lars-Erik Kimmel",
-	"license": "GPL-3.0-only",
-	"bugs": {
-		"url": "https://github.com/GerroDen/vue2-product-fruits/issues"
-	},
-	"homepage": "https://github.com/GerroDen/vue2-product-fruits#readme",
-	"devDependencies": {
-		"eslint": "^8.49.0",
-		"eslint-plugin-vue": "^9.17.0"
-	}
+  "name": "vue2-product-fruits",
+  "version": "0.1.0",
+  "description": "Vue2 port of react-product-fruits",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerroDen/vue2-product-fruits.git"
+  },
+  "author": "Lars-Erik Kimmel",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/GerroDen/vue2-product-fruits/issues"
+  },
+  "homepage": "https://github.com/GerroDen/vue2-product-fruits#readme",
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "prettier": "^3.0.3"
+  }
 }
